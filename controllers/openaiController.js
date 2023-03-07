@@ -8,7 +8,7 @@ const openai = new OpenAIApi(configuration);
 const generateImage = async (req, res) => {
     const { prompt, size } = req.body;
     const imageSize = size === 'small ' ? '256x256' : size === 'medium' ? '512x512' : '1024x1024';
-    const cartoonifyPrompt = `black and white cartoon of a ${prompt}`;
+    const cartoonifyPrompt = `full sized black and white solid line cartoon of ${prompt}`;
     try {
         const response = await openai.createImage({
             prompt: cartoonifyPrompt,
